@@ -43,12 +43,11 @@
   ([name color]
      (let [n (keyword name)]
        (when-not (n @turtles)
-         (dosync
-          (swap! lines assoc n [])
-          (swap! turtles assoc n {:x 0
-                                  :y 0
-                                  :angle 90
-                                  :color color})))
+         (swap! lines assoc n [])
+         (swap! turtles assoc n {:x 0
+                                 :y 0
+                                 :angle 90
+                                 :color color}))
        {n (n @turtles)})))
 
 (defn turtle-names
@@ -188,9 +187,8 @@
   "makes back to the starting state.
    only :trinity is in the home position."
   []
-  (dosync
-   (swap! lines (constantly {turtle []}))
-   (swap! turtles (constantly {turtle trinity})))
+  (reset! lines {turtle []})
+  (reset! turtles {turtle trinity})
   turtle)
 
 ;; triangle (by polar equations)
