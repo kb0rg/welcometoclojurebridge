@@ -1,8 +1,7 @@
 (ns clojurebridge-turtle.walk
   (:use clojure.repl)
   (:use clojurebridge-turtle.core))
-(clean)
-(home)
+(init)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; evaluate whole file by hitting
@@ -22,5 +21,3 @@
 ;;
 ;; see how turtle walks
 ;;
-
-
