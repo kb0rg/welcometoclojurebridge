@@ -43,11 +43,11 @@
   ([name color]
      (let [n (keyword name)]
        (when-not (n @turtles)
-          (swap! lines assoc n [])
-          (swap! turtles assoc n {:x 0
-                                  :y 0
-                                  :angle 90
-                                  :color color}))
+         (swap! lines assoc n [])
+         (swap! turtles assoc n {:x 0
+                                 :y 0
+                                 :angle 90
+                                 :color color}))
        {n (n @turtles)})))
 
 (defn turtle-names
