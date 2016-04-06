@@ -43,11 +43,12 @@
   ([name color]
      (let [n (keyword name)]
        (when-not (n @turtles)
-         (swap! lines assoc n [])
-         (swap! turtles assoc n {:x 0
-                                 :y 0
-                                 :angle 90
-                                 :color color}))
+         (dosync
+          (swap! lines assoc n [])
+          (swap! turtles assoc n {:x 0
+                                  :y 0
+                                  :angle 90
+                                  :color color})))
        {n (n @turtles)})))
 
 (defn turtle-names
@@ -183,13 +184,6 @@
                        (fn [m k v] (assoc m k (merge v {:x 0 :y 0 :angle 90}))) {} tm)))
      (turtle-names)))
 
-(defn init
-  "makes back to the starting state.
-   only :trinity is in the home position."
-  []
-  (reset! lines {turtle []})
-  (reset! turtles {turtle trinity})
-  turtle)
 
 ;; triangle (by polar equations)
 ;;
@@ -272,7 +266,10 @@
                                      ;; a nice shade of light grey.
   (q/stroke-weight 1))
 
+(def panel-exists? (atom false))
+
 (defn setup []
+  (reset! panel-exists? true)
   (q/smooth)                          ;; Turn on anti-aliasing
   ;; (q/frame-rate 1)                    ;; Set framerate to 1 FPS
   (reset-rendering))
@@ -288,10 +285,21 @@
     (draw-all-turtles)
     (q/pop-matrix)))
 
-(q/defsketch clojurebridge-turtle
-  :title "Walk your turtles!"         ;; Set the title of the sketch
-  :setup setup                        ;; Specify the setup fn
-  :draw draw                          ;; Specify the draw fn
-  :features [:keep-on-top]            ;; Keep the window on top
-  :size [485 300])                    ;; You struggle to beat the golden ratio
+(defn create-turtle-panel []
+  (when-not @panel-exists?
+    (q/defsketch clojurebridge-turtle
+              :title "Walk your turtles!"         ;; Set the title of the sketch
+              :setup setup                        ;; Specify the setup fn
+              :draw draw                          ;; Specify the draw fn
+              :on-close #(reset! panel-exists? false) ;; Called when window is closed
+              :features [:keep-on-top]            ;; Keep the window on top
+              :size [485 300])))                   ;; You struggle to beat the golden ratio
 
+(defn init
+  "makes back to the starting state.
+   only :trinity is in the home position."
+  []
+  (swap! lines (constantly {turtle []}))
+  (swap! turtles (constantly {turtle trinity}))
+  (create-turtle-panel)
+  @turtles)
