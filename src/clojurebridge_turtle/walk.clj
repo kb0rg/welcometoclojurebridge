@@ -1,8 +1,7 @@
 (ns clojurebridge-turtle.walk
   (:use clojure.repl)
   (:use clojurebridge-turtle.core))
-(clean)
-(home)
+(init)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; click Run with REPL followed by Reload for the first time
@@ -25,5 +24,3 @@
 ;;
 ;; see how the turtle walks
 ;;
-
-
