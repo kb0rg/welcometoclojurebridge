@@ -4,15 +4,18 @@
 (clean)
 (home)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; evaluate whole file by hitting
-;;   ctrl + shift + enter, or
-;;   cmd + shift + enter
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; click Run with REPL followed by Reload for the first time
+;; once a turtle is appeared in the window,
+;;   - type code in the editor, select region and Eval Selection
+;;   or
+;;   - type code in the right bottom REPL
 ;;
-;; add some functions under these comment lines
-;; evaluate each form (line or function) by hitting
-;;   ctrl + enter,  or
-;;   cmd + enter
+;; to evalate whole file, click Reload
+;;
+;; [Exercise]
+;; write some functions under these comment lines
+;; and evalute those
 ;;
 ;; for example
 ;; (forward 30)
@@ -20,7 +23,7 @@
 ;; (forward 30)
 ;; (right 90)
 ;;
-;; see how turtle walks
+;; see how the turtle walks
 ;;
 
 

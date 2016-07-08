@@ -16,19 +16,27 @@ git clone https://github.com/ClojureBridge/welcometoclojurebridge
 cd welcometoclojurebridge
 ```
 
-- load walk.clj on LightTable
+- load walk.clj on Nightcode
 
 open the file
 `welcomeclojurebridge/src/clojurebridge_turtle/walk.clj`.
-Then,
-<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> or
-<kbd>Cmd</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd> to evaluate the
-file.
+Then, click `Run with REPL`.
+It may take long. Evetually, you'll see the prompt,`user=> nil`, on the bottom REPL pane.
+Finally, click `Reload`. You'll see a window with a small triangle on the center.
+This triangle is a turtle.
+
 
 Once the turtles app starts running, evaluate each form (code fragment
-enclosed by matching parentheses) by hitting,
-<kbd>Ctrl</kbd> + <kbd>Enter</kbd> or
-<kbd>Cmd</kbd> + <kbd>Enter</kbd> at the end of the line or function definition.
+enclosed by matching parentheses) by either one of two:
+
+1. type code in the editor, select the region then click `Eval Selection`.
+2. type code in the right bottom REPL and hit return(enter).
+
+
+The difference of above two are --
+If you write code in the editor, you can save it.
+Click `Save` on the top when you want to do.
+Writing code in the REPL is handy, but you can't save it.
 
 
 - load walk.clj on lein repl
@@ -38,7 +46,7 @@ startup repl, then run `require` and `ns`.
 ```clojure
 user=> (require 'clojurebridge-turtle.walk)
 nil
-user=> (ns clojurebridge-turtle.walk)  ;; no need to run this on LightTable
+user=> (ns clojurebridge-turtle.walk)
 nil
 clojurebridge-turtle.walk=> (turtle-names)
 [:trinity]
@@ -79,9 +87,6 @@ its usage.
 
 
 #### 2. [easy] Basic movement - forward, backward, right and left
-
-> Use <kbd>Ctrl</kbd> + <kbd>Enter</kbd> or
-> <kbd>Cmd</kbd> + <kbd>Enter</kbd> at the end of the line on LightTable
 
 - forward
 
@@ -153,9 +158,6 @@ clojurebridge-turtle.walk=> (state)
 
 #### 3. [easy] Multiple turtles
 
-> Use <kbd>Ctrl</kbd> + <kbd>Enter</kbd> or
-> <kbd>Cmd</kbd> + <kbd>Enter</kbd> at the end of the line on LightTable
-
 - add turtles
 
 ```clojure
@@ -204,9 +206,6 @@ clojurebridge-turtle.walk=> (forward :cypher 40)
 
 #### 4. [easy] Add one more turtle and give them commands
 
-> Use <kbd>Ctrl</kbd> + <kbd>Enter</kbd> or
-> <kbd>Cmd</kbd> + <kbd>Enter</kbd> at the end of the line on LightTable
-
 - add another turtle named :morpheus with color
 
 ```clojure
@@ -251,9 +250,6 @@ clojurebridge-turtle.walk=> (forward :morpheus 20)
 
 #### 5. [easy - intermediate] Move all five turtles - introduction to function
 
-> Use <kbd>Ctrl</kbd> + <kbd>Enter</kbd> or
-> <kbd>Cmd</kbd> + <kbd>Enter</kbd> at the last line of functions
-> on LightTable
 
 We've had five turtles and want to move or tilt those five.
 Let's think how we can make all five turtles go forward by 40?
@@ -316,10 +312,6 @@ clojurebridge-turtle.walk=> (map (juxt #(right % 60) #(forward % 30)) (turtle-na
 
 
 #### 6. [easy - intermediate] Write a function that adds turtles
-
-> Use <kbd>Ctrl</kbd> + <kbd>Enter</kbd> or
-> <kbd>Cmd</kbd> + <kbd>Enter</kbd> at the end of each line or last
-> line of function definition on LightTable
 
 While playing around with turtles, we may mess up their movements.
 The `(init)` command makes everything clean up and back to the initial state.
