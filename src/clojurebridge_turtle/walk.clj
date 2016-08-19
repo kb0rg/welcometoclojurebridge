@@ -4,13 +4,15 @@
 (init)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; click Run with REPL followed by Reload for the first time
-;; once a turtle is appeared in the window,
-;;   - type code in the editor, select region and Eval Selection
-;;   or
-;;   - type code in the right bottom REPL
+;; On NightCode, click Run with REPL followed by Reload for the
+;; first time. If REPL has already started, click Reload to run
+;; this code.
 ;;
-;; to evalate whole file, click Reload
+;; Once a turtle (small triangle) appears in the center of window,
+;; type code in REPL.
+;;
+;; Alternatively, you may type code in this editor. To evaluate
+;; whole file, click Reload.
 ;;
 ;; [Exercise]
 ;; write some functions under these comment lines
