@@ -22,14 +22,14 @@ open the file
 `welcomeclojurebridge/src/clojurebridge_turtle/walk.clj`.
 Then, click `Run with REPL`.
 It may take long. Evetually, you'll see the prompt,`user=> nil`, on the bottom REPL pane.
-Finally, click `Reload`. You'll see a window with a small triangle on the center.
+Finally, click `Reload File`. You'll see a window with a small triangle on the center.
 This triangle is a turtle.
 
 
 Once the turtles app starts running, evaluate each form (code fragment
 enclosed by matching parentheses) by either one of two:
 
-1. type code in the editor, select the region then click `Eval Selection`.
+1. type code in the editor, select the region then click `Reload Selection`.
 2. type code in the right bottom REPL and hit return(enter).
 
 
