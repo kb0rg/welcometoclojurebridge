@@ -136,7 +136,7 @@ Absolute dimensions and angles are setup as in below:
 
 | command | description |
 | ------- | ----------- |
-|`(init)`| makes back to the staring state. |
+|`(init)`| makes back to the starting state. |
 
 ### usage examples
 
